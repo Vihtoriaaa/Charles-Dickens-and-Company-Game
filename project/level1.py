@@ -1,6 +1,6 @@
-import time
+""""first level of my game yes!"""
 import random
-import os
+import string
 from support_functions import timeprint
 
 
@@ -13,25 +13,15 @@ def first_level(tickets):
     Then the game is over
     """
     tickets = int(tickets)
-    name = 'CHARLESDICKENS'
-    name_list = list(name)
+    name_list = list('CHARLESDICKENS')
     random.shuffle(name_list)
-    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    list_alphabet = list(alphabet)
+    list_alphabet = list(string.ascii_uppercase)
 
-    for _ in range(3):
-        character = random.choice(list_alphabet)
-        if character not in name_list:
-            name_list.append(character)
-
-    if len(name_list) != 17:
-        while len(name_list) < 17:
-            new_character = random.choice(alphabet)
-            if new_character not in name_list:
-                name_list.append(new_character)
+    three_char = [[char for char in random.choice(list_alphabet)] for _ in range(3)]
+    three_char = [''.join(x) for x in three_char]
+    name_list += three_char
 
     all_letters = ' '.join(name_list)
-    facts = []
     fact1 = "He published one of the most iconic Christmas stories of all \
 times in 1843."
     fact2 = "He was an English writer and social critic \
@@ -66,7 +56,7 @@ with capital letters: ")
 
         else:
             print()
-            timeprint("Ooops you've made a mistake.")
+            timeprint("Oops, you've made a mistake.")
             timeprint("We can help you to get the right answer.")
             fact = random.choice(facts)
             print("--------------------------\n|        ROUND TWO       |\n---\
@@ -89,7 +79,7 @@ with capital letters: ")
 
             else:
                 print()
-                timeprint("Ooops you've made another mistake. You have only \
+                timeprint("Oops, you've made another mistake. You have only \
 # one chance left to pass this level.")
                 fact = random.choice(facts)
                 print("-----------------------\

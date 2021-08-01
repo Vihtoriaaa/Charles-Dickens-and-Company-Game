@@ -1,17 +1,16 @@
-import time
+"""second level of my game yes!"""
 import random
-import pandas as pd
-import os
-from support_functions import read_data, find_books, find_other_books, timeprint, book_csv
+from support_functions import find_books, find_other_books, timeprint, book_csv
+
 
 def second_level(tickets):
     """
     This function is the second level of the game. It help the user to discover\
     more Charles Dickens' books. The user gets 3 books, one of them was\
-    written by Charles Dickens, and the other 2 are from other authours. The\
+    written by Charles Dickens, and the other 2 are from other authors. The\
     user has to choose the books which were not written by Charles to complete\
     this level. For the right answer the user gets some bonus points. If the \
-    answer is wrong, then user_input dissappears and the user does not gets \
+    answer is wrong, then user_input disappears and the user does not gets \
     points there are 2 books left to choose. If the user fails to win, then \
     he goes to level 3 without any points.
     """
@@ -52,13 +51,13 @@ def second_level(tickets):
 
         if user_input == one_book:
             print()
-            timeprint("Ooops wrong answer:( You failed to pass this level.")
+            timeprint("Oops, wrong answer:( You failed to pass this level.")
             break
 
         elif user_input == second_book or user_input == third_book:
             print()
             tickets += 1
-            timeprint("YEES, you are rigth. Now there are 2 books left")
+            timeprint("Yes! you are right. Now there are 2 books left")
             three_books = three_books.replace(user_input, '')
             three_books = three_books.strip()
 
@@ -74,7 +73,7 @@ def second_level(tickets):
             user_input = input()
             if user_input == one_book:
                 print()
-                timeprint("Ooops wrong answer:( You failed to pass this level\
+                timeprint("Oops, wrong answer:( You failed to pass this level\
  without mistakes.")
                 break
 
@@ -86,11 +85,13 @@ def second_level(tickets):
 
             else:
                 print()
-                timeprint("Ooops wrong input. Try again")
+                timeprint("Oops, wrong input. Try again")
 
         else:
             print()
-            timeprint("Ooops wrong input. Try again")
+            timeprint("Oops, wrong input. Try again")
 
     return tickets
+
+
 print("hello world :)))")

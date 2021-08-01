@@ -1,8 +1,5 @@
-import time
-import random
-import pandas as pd
-import os
-from support_functions import read_data, timeprint
+"""third level of my game yes!!!"""
+from support_functions import timeprint
 import random
 
 
@@ -13,8 +10,8 @@ def get_three_films():
     """
     films = []
     three_films = list()
-    file = open('film_names.txt', 'r', encoding='utf-8')
-    for line in file:
+    my_file = open('film_names.txt', 'r')
+    for line in my_file:
         line = line[:-2]
         films.append(line)
     for _ in range(3):
@@ -48,7 +45,7 @@ if not - sorry not sorry.")
     other_films_str = '\n'.join(other_films)
     while True:
         one_round = random.choice(variants)
-        if one_round == True:
+        if one_round is True:
             right_film = random.choice(author_films)
             print()
             print('--------------------------')
@@ -58,13 +55,13 @@ if not - sorry not sorry.")
             author_films_str = author_films_str.replace(right_film, '')
             if user_input != 'True':
                 counter += 1
-                timeprint("Ooops wrong answer ;(")
+                timeprint("Oops, wrong answer ;(")
                 if counter == 6:
                     break
 
             elif user_input == 'True':
                 counter += 1
-                timeprint("YEEES, you are right :)")
+                timeprint("Yes! you are right :)")
                 tickets += 1
                 if counter == 6:
                     break
@@ -78,13 +75,13 @@ if not - sorry not sorry.")
             other_films_str = other_films_str.replace(wrong_film, '')
             if user_input != 'False':
                 counter += 1
-                timeprint("Ooops wrong answer ;(")
+                timeprint("Oops, wrong answer ;(")
                 if counter == 6:
                     break
 
             elif user_input == 'False':
                 counter += 1
-                timeprint("YEEES, you are right :)")
+                timeprint("Yes! you are right :)")
                 tickets += 1
                 if counter == 6:
                     break
