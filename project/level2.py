@@ -93,3 +93,4 @@ def second_level(tickets):
             timeprint("Ooops wrong input. Try again")
 
     return tickets
+print('hello world :)')
